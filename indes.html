@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
     <script
       src="https://kit.fontawesome.com/e5e5f9413c.js"
@@ -13,10 +13,36 @@
     <title>Library</title>
   </head>
   <body>
-    <h1>Library</h1>
-    <div class="container">
-      <div class="book-container">
+    <div class="wrapper not-active">
+      <h1>Library</h1>
+      <div class="container">
+        <div class="book-container"></div>
       </div>
+      <form action="">
+        <div class="form">
+          <h2>Add New Book</h2>
+          <p>
+            <input type="text" name="title" id="title" placeholder="Title" required>
+            <label for="title">Title</label>
+          </p>
+          <p>
+            <input type="text" name="author" id="auhtor" placeholder="Author" required>
+            <label for="author">Author</label>
+          </p>
+          <p>
+            <input type="number" name="pages" id="pages" placeholder="No. of pages" required>
+            <label for="pages">No. of pages</label>
+          </p>
+          <ul>
+            <label for="read-flag">Have you read it?</label>
+            <input type="checkbox" name="read" id="read-flag">
+          </ul>
+          <div class="buttons">
+            <button type="submit">Add</button>
+            <button type="button">Cancel</button>
+          </div>
+        </div>
+      </form>
     </div>
   </body>
 </html>

@@ -1,5 +1,6 @@
 :root {
   font-size: 62.5%;
+  --not-active: rgba(0, 0, 0, 0.397);
 }
 
 *, *::after, *::before {
@@ -45,4 +46,107 @@ h1 {
 
 .add-book *:hover {
   transform: scale(1.2) rotateZ(90deg);
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 40rem;
+  height: 60rem;
+  border: black solid 2px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.5rem;
+}
+
+.form h2 {
+  font-size: 3rem;
+}
+
+.form input[type="text"], .form input[type="number"] {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.form p {
+  position: relative;
+}
+
+.form p label {
+  font-size: 2rem;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  opacity: 0;
+  top: 1rem;
+  left: 0;
+}
+
+.form p input:not(:placeholder-shown) + label {
+  top: -2.5rem;
+  opacity: 1;
+}
+
+.form ul label{
+  font-size: 2.5rem;
+  margin-right: 2rem;
+  vertical-align: middle;
+}
+
+.form ul input {
+  width: 3rem;
+  height: 3rem;
+  border: black 2px solid;
+  vertical-align: middle;
+}
+
+.form .buttons {
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+}
+
+.form .buttons button{
+  font-size: 2.5rem;
+  flex: 1;
+  cursor: pointer;
+  border: none;
+}
+
+.form .buttons button[type="submit"] {
+  border-radius: 1.5rem 0 0 1.5rem;
+  background-color: #8ac926;
+}
+
+.form .buttons button[type="button"] {
+  border-radius: 0 1.5rem 1.5rem 0;
+  background-color: #e71d36;
+}
+
+.form .buttons button[type="button"]:active {
+  background-color: #d90429;
+}
+
+.form .buttons button[type="submit"]:active {
+  background-color: #55a630;
+}
+
+.not-active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--not-active);
+}
+
+.hidden {
+  display: none;
 }
