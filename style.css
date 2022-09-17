@@ -1,0 +1,48 @@
+:root {
+  font-size: 62.5%;
+}
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-size: 5rem;
+  padding: 2rem;
+  background-color: #ffbe0b;
+  letter-spacing: 2px;
+}
+
+.container {
+  padding: 2rem;
+}
+
+.book-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 15px;
+  justify-items: center;
+}
+
+.add-book {
+  height: 30rem;
+  width: 30rem;
+  font-size: 20rem;
+  border: solid black 2px;
+  border-radius: 1.5rem;
+  padding: 5rem;
+  text-align: center;
+  background-color: #8ecae6;
+}
+
+.add-book * {
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.add-book *:hover {
+  transform: scale(1.2) rotateZ(90deg);
+}
