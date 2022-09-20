@@ -41,6 +41,10 @@ Book.prototype.toggleRead = function () {
   this.read = this.read ? false : true;
 };
 
+const isBookInLibrary = (book) => {
+  return myLibrary.some((b) => b.title === book.title);
+};
+
 const addBookToLibrary = (e) => {
   e.preventDefault();
   const title = document.querySelector("#title").value;
@@ -48,6 +52,10 @@ const addBookToLibrary = (e) => {
   const pages = document.querySelector("#pages").value;
   const read = document.querySelector("#read-flag").checked;
   const book = new Book(title, author, pages, read);
+  if (isBookInLibrary(book)) {
+    document.querySelector(".error").classList.remove("hidden");
+    return;
+  }
   myLibrary.push(book);
   closeForm();
   displayBookCard();

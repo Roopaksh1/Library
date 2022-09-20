@@ -101,6 +101,13 @@ h1 {
   position: relative;
 }
 
+.form .error {
+  color: red;
+  position: absolute;
+  font-size: 1.7rem;
+  top: 5rem;
+}
+
 .form p label {
   font-size: 2rem;
   transition: all 0.3s ease-in-out;
