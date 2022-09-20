@@ -57,6 +57,7 @@ const addBookToLibrary = (e) => {
     return;
   }
   myLibrary.push(book);
+  clearForm();
   closeForm();
   displayBookCard();
 };
@@ -70,6 +71,13 @@ const closeForm = () => {
   document.querySelector(".wrapper").classList.remove("not-active");
   document.querySelector(".form").classList.add("hidden");
 };
+
+const clearForm = () => {
+  document.querySelector("#title").value = "";
+  document.querySelector("#author").value = "";
+  document.querySelector("#pages").value = "";
+  document.querySelector("#read-flag").checked = false;
+}
 
 const displayBookCard = () => {
   const container = document.querySelector(".book-container");
