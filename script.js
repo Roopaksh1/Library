@@ -20,27 +20,28 @@ const bindEvents = () => {
 window.addEventListener("load", addNewBookButton);
 window.addEventListener("load", bindEvents);
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  info(index) {
+    return `<p>Title: ${this.title}<br> By: ${this.author}<br> No. of pages: ${
+      this.pages
+    }<br></p>${
+      this.read
+        ? `<button class="read" data-index="${index}">Read</button>`
+        : `<button class="not-read" data-index="${index}">Not Read</button>`
+    }<button class="remove" data-index="${index}">Remove</button>`;
+  };
+
+  toggleRead() {
+    this.read = this.read ? false : true;
+  }
 }
-
-Book.prototype.info = function (index) {
-  return `<p>Title: ${this.title}<br> By: ${this.author}<br> No. of pages: ${
-    this.pages
-  }<br></p>${
-    this.read
-      ? `<button class="read" data-index="${index}">Read</button>`
-      : `<button class="not-read" data-index="${index}">Not Read</button>`
-  }<button class="remove" data-index="${index}">Remove</button>`;
-};
-
-Book.prototype.toggleRead = function () {
-  this.read = this.read ? false : true;
-};
-
 const isBookInLibrary = (book) => {
   return myLibrary.some((b) => b.title === book.title);
 };
@@ -77,7 +78,7 @@ const clearForm = () => {
   document.querySelector("#author").value = "";
   document.querySelector("#pages").value = "";
   document.querySelector("#read-flag").checked = false;
-}
+};
 
 const displayBookCard = () => {
   const container = document.querySelector(".book-container");
