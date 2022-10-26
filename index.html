@@ -18,36 +18,43 @@
       <div class="container">
         <div class="book-container"></div>
       </div>
-      <form action="">
+      <form>
         <div class="form hidden">
           <h2>Add New Book</h2>
           <p>
-            <span class="hidden error">This book already exists in your library</span>
+            <span class="hidden error title"></span>
             <input
               type="text"
               name="title"
               id="title"
               placeholder="Title"
+              minlength="3"
+              maxlength="20"
               required
             />
             <label for="title">Title</label>
           </p>
           <p>
+            <span class="hidden error author"></span>
             <input
               type="text"
               name="author"
               id="author"
               placeholder="Author"
+              minlength="2"
+              maxlength="20"
               required
             />
             <label for="author">Author</label>
           </p>
           <p>
+            <span class="hidden error pages"></span>
             <input
               type="number"
               name="pages"
               id="pages"
               placeholder="No. of pages"
+              min="1"
               required
             />
             <label for="pages">No. of pages</label>

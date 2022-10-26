@@ -19,6 +19,10 @@ h1 {
   letter-spacing: 2px;
 }
 
+input {
+  outline: none;
+}
+
 .container {
   padding: 2rem;
 }
@@ -104,7 +108,7 @@ h1 {
 .form .error {
   color: red;
   position: absolute;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   top: 5rem;
 }
 
@@ -164,6 +168,14 @@ h1 {
 
 .form .buttons button[type="submit"]:active {
   background-color: #55a630;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid {
+  border: red solid 2px;
+}
+
+input:valid {
+  border: lightgreen solid 2px;
 }
 
 .not-active::before {
